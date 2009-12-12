@@ -1,0 +1,11 @@
+#!/bin/sh
+
+n=1
+
+for a1 in ${@:2}
+do
+	for a2 in ${@:2}
+	do
+		echo -e "$a1\t$a2\t$1" >> ./conversions
+	done
+done

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ret=""
+
+IFS=$'\n'
+for a in $(identify -list format | egrep "\ +[A-Z0-9]+\*?  +" | sed -r "s|\ +([A-Z0-9]+)\*? +.*|\1|" | tr '[:upper:]' '[:lower:]')
+do
+	ret="$ret $a"
+done
+
+sh all-equal 'convert $1 $2' $ret
