@@ -44,7 +44,7 @@ fi
 
 conversions="jpg\tpng\tconvert \$1 \$2"
 
-e=$(echo -e "$conversions" | ./find-best-path "$iformat" "$oformat")
+e=$(echo -e "$conversions" | find-best-path "$iformat" "$oformat")
 
 if [ "$e" = "0" ]
 then

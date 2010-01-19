@@ -32,11 +32,11 @@ build() {
 	msg "Starting install..."
 
 	mkdir -p $pkgdir/usr/bin
-	cp $srcdir/bin/* $pkgdir/usr/bin
+	cp bin/* $pkgdir/usr/bin
 
 	mkdir -p $pkgdir/usr/share/uniconv
-	cp $srcdir/conversions $pkgdir/usr/share/uniconv
+	cp conversions $pkgdir/usr/share/uniconv
 
 	mkdir -p $pkgdir/usr/share/man/man1
-	gzip $srcdir/MAN -c > $pkgdir/usr/share/man/man1/uniconv.1.gz
+	gzip MAN -c > $pkgdir/usr/share/man/man1/uniconv.1.gz
 }
