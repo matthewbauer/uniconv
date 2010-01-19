@@ -6,6 +6,6 @@ for a1 in ${@:2}
 do
 	for a2 in ${@:2}
 	do
-		echo -e "$a1\t$a2\t$1" >> ./conversions
+		uniconv-associate $a1 $a2 $1
 	done
 done

@@ -8,4 +8,4 @@ do
 	ret="$ret $a"
 done
 
-sh all-equal 'convert $1 $2' $ret
+equal 'convert $1 $2' $ret

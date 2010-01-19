@@ -4,5 +4,5 @@ n=1
 
 for associate in ${@:3}
 do
-	echo -e "$1\t$associate\t$2" >> ./conversions
+	echo -e "$1\t$associate\t$2" >> $UNICONV
 done

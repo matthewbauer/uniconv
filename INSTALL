@@ -1,0 +1,4 @@
+#!/bin/sh
+
+makepkg
+sudo pacman -U *.pkg.tar.gz

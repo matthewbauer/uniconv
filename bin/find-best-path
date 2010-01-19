@@ -1,0 +1,33 @@
+#!/bin/sh
+
+if [ $1 = $2 ]
+then
+	echo "0"
+	exit 0
+fi
+
+stdin=$(cat /dev/stdin)
+
+IFS=$'\n'
+
+for a in $stdin
+do
+	b=$(echo $a | sed "s|\(.*\)\t.*\t.*|\1|")
+	c=$(echo $a | sed "s|.*\t\(.*\)\t.*|\1|")
+	d=$(echo $a | sed "s|.*\t.*\t\(.*\)|\1|")
+
+	if [ $b = $1 ]
+	then
+		f=$(echo $stdin | ./find-best-path $c $b)
+		if [ "$f" = "0" ] || [ -z "$f" ]
+		then
+			echo "$d"
+			exit
+		else
+			echo "$d;$f"
+			exit
+		fi
+	fi
+done
+
+unset IFS
