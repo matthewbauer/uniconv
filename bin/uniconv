@@ -55,6 +55,6 @@ then
 	echo "No possible paths"
 	exit 1
 else
-	exec $e
+	echo $($e)
 	exit 0
 fi
